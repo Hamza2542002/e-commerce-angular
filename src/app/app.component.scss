@@ -1,0 +1,38 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #facc15;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  text-transform: uppercase;
+
+  @media (min-width: 640px) {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.userName {
+  @media (min-width: 640px) {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+}
+
+// main {
+//   max-width: 100%; // Tailwind's container class by default is responsive and adjusts to the screen size.
+//   margin-left: auto; // mx-auto for horizontal centering
+//   margin-right: auto; // mx-auto for horizontal centering
+//   padding-left: 0.75rem; // px-3
+//   padding-right: 0.75rem; // px-3
+//   min-height: 50vh; // min-h-[50vh]
+//   display: flex; // flex
+//   justify-content: center; // justify-center
+//   align-items: center; // items-center
+// }

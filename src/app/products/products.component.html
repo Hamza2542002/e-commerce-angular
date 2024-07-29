@@ -1,0 +1,44 @@
+<section class="container w-[350px] sm:w-[660px] md:w-[980px] mx-auto p-5">
+  <header class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold">Products</h1>
+    <div class="flex-gap-input">
+      <div class="sort">
+        <label for="sort-input">Sort By Price</label>
+        <input
+          type="checkbox"
+          [(ngModel)]="sorted"
+          (change)="sort()"
+          name="sort"
+          id="sort-input"
+        />
+      </div>
+      <select
+        (change)="getSelect()"
+        name="category"
+        [(ngModel)]="category"
+        id="product-type"
+      >
+        <option value="all">All</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+  </header>
+  <div *ngIf="!products" id="loading">Loading...</div>
+  <div id="error"></div>
+  <div id="productGrid">
+    <div *ngFor="let product of products" class="product-card">
+      <img
+        [src]="product.thumbnail"
+        [alt]="product.title"
+        class="product-card-img"
+      />
+      <h2 class="product-card-title">{{ product.title }}</h2>
+      <p class="product-card-price">{{ product.price.toFixed(2) }}</p>
+      <a (click)="viewProduct(product.id)" class="product-card-link"
+        >View Details</a
+      >
+    </div>
+  </div>
+</section>

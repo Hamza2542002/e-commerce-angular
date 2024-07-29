@@ -1,0 +1,33 @@
+<section class="container">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <p
+      class="message mb-4 text-sm font-medium text-stone-600 sm:text-base mb-4"
+    >
+      👋 Welcome! Please start by telling us your name:
+    </p>
+    <input
+      required
+      id="userName"
+      name="userName"
+      [(ngModel)]="userName"
+      ngModel
+      type="text"
+      placeholder="Your full name"
+      class="mb-8 w-72 rounded-full py-3 px-4 text-sm md:text-sm font-semibold text-stone-800 bg-stone-100 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2"
+    />
+    <small
+      *ngIf="
+        loginForm.submitted &&
+        loginForm.controls['userName'].errors?.['required']
+      "
+      >Please Enter Your Name</small
+    >
+    <div>
+      <button
+        class="navigate-btn py-3 px-4 inline-block rounded-full bg-yellow-400 text-sm md:text-sm font-semibold uppercase text-stone-800 transition-colors duration-300 hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed"
+      >
+        Start Shopping
+      </button>
+    </div>
+  </form>
+</section>

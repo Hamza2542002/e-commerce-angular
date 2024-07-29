@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="shopping-cart-container">
+    <a (click)="navigateToProducts()" routerLink="/products" class="back-link"
+      ><- Back To Products</a
+    >
+    <h1 class="cart-title">Shopping Cart</h1>
+
+    <div class="cart-items-container" id="cartItems">
+      <div *ngIf="cartItems.length == 0" id="cartEmpty" class="empty-message">
+        Your cart is empty.
+      </div>
+      <div id="cartList">
+        <div class="cart-item" *ngFor="let product of cartItems">
+          <div class="cart-item-details flex items-center">
+            <img
+              [src]="product.thumbnail"
+              [alt]="product.title"
+              class="product-image w-16 h-16 object-cover rounded mr-4"
+            />
+            <div class="product-info">
+              <h2 class="product-title font-semibold">{{ product.title }}</h2>
+              <p class="product-price text-gray-600">
+                ${{ product.price.toFixed(2) }}
+              </p>
+            </div>
+          </div>
+          <div class="cart-item-actions flex items-center space-x-4">
+            <button
+              (click)="updateQuantity(-1, product.id)"
+              id="decrementButton"
+              class="quantity-button bg-red-500 text-white py-1 px-2 rounded hover:bg-red-700"
+            >
+              -
+            </button>
+            <span id="itemQuantity" class="item-quantity text-lg font-semibold">
+              {{ product.quantity }}
+            </span>
+            <button
+              (click)="updateQuantity(1, product.id)"
+              id="incrementButton"
+              class="quantity-button bg-green-500 text-white py-1 px-2 rounded hover:bg-green-700"
+            >
+              +
+            </button>
+            <button
+              class="remove-button bg-red-500 px-2 py-1 rounded-lg text-white hover:bg-red-600"
+              (click)="removeFromCart(product.id)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="cartTotal" class="cart-total">Total: $0.00</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+.container {
+  width: 350px; // w-[350px]
+  margin: 0 auto; // mx-auto
+  padding: 1.25rem; // p-5
+
+  @media (min-width: 640px) {
+    // sm
+    width: 660px; // sm:w-[660px]
+  }
+}
+#loading {
+  text-align: center; // text-center
+  font-size: 1.125rem; // text-lg
+  color: #4b5563; // text-gray-600
+  margin-bottom: 1.5rem; // mb-6
+}
+
+#error {
+  text-align: center; // text-center
+  font-size: 1.125rem; // text-lg
+  color: #dc2626; // text-red-600
+  margin-bottom: 1.5rem; // mb-6
+  display: none; // hidden
+}
+
+#productCard {
+  margin: 0 auto; // mx-auto
+  max-width: 40rem; // max-w-lg
+  background-color: #ffffff; // bg-white
+  border-radius: 0.5rem; // rounded-lg
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // shadow-md
+  padding: 1.5rem; // p-6
+}
+
+.back-link {
+  color: #3b82f6; // text-blue-500
+  margin-bottom: 1.25rem; // mb-5
+  display: inline-block; // inline-block
+}
+
+.product-title {
+  font-size: 1.5rem; // text-2xl
+  font-weight: bold; // font-bold
+  margin-bottom: 1rem; // mb-4
+}
+
+.product-image {
+  width: 100%; // w-full
+  object-fit: cover; // object-cover
+  margin-bottom: 1rem; // mb-4
+  border-radius: 0.5rem; // rounded-lg
+}
+
+.product-description,
+.product-category,
+.product-stock,
+.product-brand,
+.product-sku,
+.product-weight,
+.product-dimensions,
+.product-warranty,
+.product-shipping,
+.product-availability,
+.product-return-policy,
+.product-moq {
+  color: #374151; // text-gray-700
+  margin-bottom: 0.5rem; // mb-2
+}
+
+.product-price {
+  font-size: 1.25rem; // text-xl
+  font-weight: 600; // font-semibold
+  margin-bottom: 0.5rem; // mb-2
+  color: #059669; // text-green-600
+}
+
+.product-rating {
+  color: #f59e0b; // text-yellow-500
+  margin-bottom: 0.5rem; // mb-2
+}
+
+#productReviews {
+  margin-top: 1rem; // mt-4
+}
+
+#productQRCode {
+  width: 6rem; // w-24
+  margin-top: 1rem; // mt-4
+}
+
+#addToCartButton {
+  margin-top: 1rem; // mt-4
+  padding: 0.5rem 1rem; // py-2 px-4
+  background-color: #3b82f6; // bg-blue-500
+  color: #ffffff; // text-white
+  border-radius: 0.25rem; // rounded
+  transition: background-color 0.3s; // transition-all
+  display: block;
+  border: 0;
+
+  &:hover {
+    background-color: #1e40af; // hover:bg-blue-700
+  }
+}
+
+#cartMessage {
+  margin-top: 0.5rem; // mt-2
+  color: #10b981; // text-green-500
+  display: none; // hidden
+}
